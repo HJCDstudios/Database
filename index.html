@@ -4,9 +4,10 @@
 <script type="text/javascript" src="file:///android_asset/app.js"></script>
 </head>
 <body onLoad="load_prods();">
+<center>
 <h2 style="color: rgb(0,150,255);">Lola<br>Lumings</h2>
 <div id="home">
-<table id="prods">
+<table id="prods" border>
 </table>
 </div>
 <div id="prod_view">
@@ -19,9 +20,7 @@
 <h2 id="prod_t"></h2>
 </td>
 </table>
-<hr>
-<div id="prod_v_in"></div>
-</div>
+</center>
 <script type="text/javascript">
 var prods1 = {
   "Product": ["Big Macapuno","Small Macapuno","Big Coco Jam","Small Coco Jam","Big Ampalaya","Small Ampalaya","Big Pineapple Jam","Small Pineapple Jam"],
@@ -74,6 +73,7 @@ td {
 }
 table {
   width: 50%;
+  border-color: rgb(0,150,255);
 }
 .contact > b {
   color: white;
