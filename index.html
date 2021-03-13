@@ -27,11 +27,12 @@ var prods1 = {
   "Product": ["Big Macapuno","Small Macapuno","Big Coco Jam","Small Coco Jam","Big Ampalaya","Small Ampalaya","Big Pineapple Jam","Small Pineapple Jam"],
   "Price":   [      350     ,       150      ,      150     ,       100      ,      100     ,    "UNKOWN"    ,        150        ,         100         ],
   "Stock":   [       0      ,        0       ,       0      ,        0       ,       0      ,       0        ,         0         ,          0          ],
-  "Sold_Out":[     true     ,       true     ,     true     ,      true      ,     true     ,      true      ,       true        ,         true        ]
+  "Sold_Out":[     true     ,       true     ,     true     ,      true      ,     true     ,      true      ,       true        ,         true        ],
+  "src":["","","","","","","",""]
 }
 function load_prods() {
   for(var i = 0; i < prods1.Product.length; i++) {
-    document.getElementById("prods").innerHTML += "<tr><td><b class='title'>" + prods1.Product[i] + "</b></td></tr><tr><td><p class='price'>Price: " + prods1.Price[i] + "</p></td></tr><tr><td><p class='stock'>Stock: " + prods1.Stock[i] + "</td></tr><tr><td>" + btn(i) + "</td></tr>";
+    document.getElementById("prods").innerHTML += "<hr><tr><td><img src='" + prods1.src[i] + "' class='prod_im'></td></tr><tr><td><b class='title'>" + prods1.Product[i] + "</b></td></tr><tr><td><p class='price'>Price: " + prods1.Price[i] + "</p></td></tr><tr><td><p class='stock'>Stock: " + prods1.Stock[i] + "</td></tr><tr><td>" + btn(i) + "</td></tr>";
   }
 }
 function ge(j) {
@@ -72,7 +73,7 @@ td {
   display: none;
 }
 table {
-  width: 100%;
+  width: 50%;
 }
 .contact > b {
   color: white;
