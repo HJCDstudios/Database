@@ -4,6 +4,7 @@
 <script type="text/javascript" src="file:///android_asset/app.js"></script>
 </head>
 <body onLoad="load_prods();">
+<h2 style="color: rgb(0,150,255);">Lola<br>Lumings</h2>
 <div id="home">
 <table id="prods">
 </table>
@@ -37,7 +38,7 @@ function ge(j) {
   location="https://";
 }
 function btn(i) {
-  if (prods1.Sold_Out[i]) {
+  if (!prods1.Sold_Out[i]) {
     return ("<div class='contact' onClick='ge();app.ShowPopup(msg);'><b>Contact Me</b></div>").replace("msg","Contact me here");
   } else {
     return "<div class='sold_out'>Sold Out!</div>";
