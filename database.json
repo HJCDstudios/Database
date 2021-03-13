@@ -1,4 +1,4 @@
-{
+var data = {
 "products":["big_macapuno","small_macapuno","big_coco_jam","small_coco_jam","big_ampalaya","small_ampalaya","big_pineapple_jam","small_pineapple_jam"],
 "prices":[300,150,150,70,150,100,150,100],
 "src":[],
