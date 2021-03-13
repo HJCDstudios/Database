@@ -1,99 +1,57 @@
 <html>
 <head>
 <title>Lola lumings</title>
+<script type="text/javascript" src="file:///android_asset/app.js"></script>
 </head>
 <body>
+<div id="home">
+<table id="prods">
+</table>
+</div>
+<div id="prod_view">
 <table>
 <tr>
 <td>
-<img src="Img/macapuno_small.png" alt="errror">
+<input type="button" value="back">
 </td>
 <td>
-<img src="Img/macapuno_big.png" alt="error">
+<h2 id="prod_t"></h2>
 </td>
-</tr>
-
-<tr>
-<td>
-<b>Small Macapuno</b>
-</td>
-<td>
-<b>Big Macapuno</b>
-</td>
-</tr>
-
-<tr>
-<td>
-<!-- Small Macapuno Price -->
-<p class="price">Price: 150PHP</p>
-</td>
-<td>
-<!-- Big Macapuno Price -->
-<p class="price">Price: 300PHP</p>
-</td>
-</tr>
-
-<tr>
-<td>
-<!-- Small Macapuno Stock -->
-Stock: 0
-</td>
-<td>
-<!-- Small Macapuno Stock -->
-Stock: 0
-</td>
-</tr>
-
-<tr>
-<td>
-<div class="sold_out">Sold Out!</div>
-</td>
-<td>
-<div class="sold_out">Sold Out!</div>
-</td>
-</tr>
-
-<!-- New Column -->
-
-<tr>
-<td>
-<img src="Img/cocojam_small.png">
-</td>
-<td>
-<img src="Img/cocojam_big.png">
-</td>
-</tr>
-
-<tr>
-<td>
-<b>Cocojam Small</b>
-</td>
-<td>
-<b>Cocojam Big</b>
-</td>
-</tr>
-
-<tr>
-<td>
-<!-- Small Cocojam Price -->
-<p class="price">Price: 70</p>
-</td>
-<td>
-<!-- Big Cocojam Price -->
-<p class="price">Price: 150</p>
-</td>
-</tr>
-
-<tr>
-<td>
-<p></p>
-</td>
-<td>
-<p>Stock: </p>
-</td>
-</tr>
 </table>
+<hr>
+<div id="prod_v_in"></div>
+</div>
 <script type="text/javascript">
+var prods1 = {
+  "Product": ["Big Macapuno","Small Macapuno","Big Coco Jam","Small Coco Jam","Big Ampalaya","Small Ampalaya","Big Pineapple Jam","Small Pineapple Jam"],
+  "Price":   [      350     ,       150      ,      150     ,       100      ,      100     ,    "UNKOWN"    ,        150        ,         100         ],
+  "Stock":   [       0      ,        0       ,       0      ,        0       ,       0      ,       0        ,         0         ,          0          ],
+  "Sold_Out":[     true     ,       true     ,     true     ,      true      ,     true     ,      true      ,       true        ,         true        ]
+}
+function load_prods() {
+  for(var i = 0; i < prods1.Product.length; i++) {
+    document.getElementById("prods").innerHTML = "<tr><td><b class='title'>" + prods1.Product[i] + "</b></td></tr><tr><td><p class='price'>Price: " + prods1.Price[i] + "</p></td><td><p class='stock'>Stock: " + prods1.Stock[i] + "</td></tr><tr><td>" + btn(i) + "</td></tr>";
+  }
+}
+function ge(j) {
+  location="https://";
+}
+function btn(i) {
+  if (prods1.Sold_Out[i]) {
+    return ("<div class='contact' onClick='ge();app.ShowPopup(msg);'><b>Contact Me</b></div>").replace("msg","Contact me here");
+  } else {
+    return "<div class='sold_out'>Sold Out!</div>";
+  }
+}
+function view_pro(id) {
+  document.getElementById("prod_view").style.display = "block";
+  document.getElementById("home").style.display = "none";
+  document.getElementById("prod_v_in").innerHTML = document.getElementById(id).innerHTML;
+}
+function back() {
+  document.getElementById("prod_view").style.display = "none";
+  document.getElementById("home").style.display = "block";
+}
 </script>
 <style type="text/css">
 td {
@@ -103,8 +61,22 @@ td {
   color: white;
   background-color: red;
 }
+.price {
+  color: orange;
+}
+.title {
+  color: rgb(0,150,255);
+}
+#prod_view {
+  display: none;
+}
 table {
   width: 100%;
+}
+.contact > b {
+  color: white;
+  background-color: lime;
+  padding: 5px;
 }
 </style>
 </body>
