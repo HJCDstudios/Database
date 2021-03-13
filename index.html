@@ -7,7 +7,7 @@
 <center>
 <h2 style="color: rgb(0,150,255);">Lola<br>Lumings</h2>
 <div id="home">
-<table id="prods" border>
+<table id="prods">
 </table>
 </div>
 <div id="prod_view">
@@ -31,7 +31,7 @@ var prods1 = {
 }
 function load_prods() {
   for(var i = 0; i < prods1.Product.length; i++) {
-    document.getElementById("prods").innerHTML += "<hr><tr><td><img src='" + prods1.src[i] + "' class='prod_im'></td></tr><tr><td><b class='title'>" + prods1.Product[i] + "</b></td></tr><tr><td><p class='price'>Price: " + prods1.Price[i] + "</p></td></tr><tr><td><p class='stock'>Stock: " + prods1.Stock[i] + "</td></tr><tr><td>" + btn(i) + "</td></tr>";
+    document.getElementById("prods").innerHTML += "<tr><td><img src='" + prods1.src[i] + "' class='prod_im'></td></tr><tr><td><b class='title'>" + prods1.Product[i] + "</b></td></tr><tr><td><p class='price'>Price: " + prods1.Price[i] + "</p></td></tr><tr><td><p class='stock'>Stock: " + prods1.Stock[i] + "</td></tr><tr><td>" + btn(i) + "</td></tr>";
   }
 }
 function ge(j) {
@@ -62,7 +62,7 @@ td {
   color: white;
   background-color: red;
 }
-.price {
+.price,.stock {
   color: orange;
 }
 .title {
@@ -73,7 +73,7 @@ td {
 }
 table {
   width: 50%;
-  border-color: rgb(0,150,255);
+  border: 1px solid rgb(0,150,255);
 }
 .contact > b {
   color: white;
